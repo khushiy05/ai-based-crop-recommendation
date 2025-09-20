@@ -363,7 +363,8 @@ const CropRecommendation: React.FC<CropRecommendationProps> = ({ location, isOnl
     
     try {
       // Simulate real satellite/sensor API call
-      const response = await fetch(https://api.example.com/soil-data?lat=${location?.lat}&lng=${location?.lng});
+      const response = await fetch("https://api.example.com/soil-data?lat=10&lng=20");
+
       
       // For demo purposes, we'll simulate the API response
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -545,7 +546,8 @@ const CropRecommendation: React.FC<CropRecommendationProps> = ({ location, isOnl
           disabled={loading}
           className="bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 disabled:opacity-50"
         >
-          {loading ? 🔄 ${t.generating} : 🎯 ${t.generateRecommendations}}
+          {loading ? t.generating + " 🔄" : "🎯 " + t.generateReco}
+
         </button>
       </div>
 
@@ -672,7 +674,8 @@ interface MetricCardProps {
 
 const MetricCard: React.FC<MetricCardProps> = ({ icon, label, value, color }) => (
   <div className="text-center">
-    <div className={flex items-center justify-center mb-1 ${color}}>
+    <div className={`flex items-center justify-center mb-1 ${color}`}>
+
       {icon}
     </div>
     <p className="text-xs text-gray-600 mb-1">{label}</p>

@@ -253,7 +253,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, col
       onClick={onClick}
       className="bg-white rounded-xl shadow-lg p-6 cursor-pointer transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
     >
-      <div className={${color} rounded-full p-4 w-16 h-16 flex items-center justify-center text-white mb-4}>
+      <div className={`${color} rounded-full p-4 w-16 h-16 flex items-center justify-center`}>
+
         {icon}
       </div>
       <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
